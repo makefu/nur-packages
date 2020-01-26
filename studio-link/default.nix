@@ -6,33 +6,31 @@
 , zlib
 , libjack2
 , autoPatchelfHook
+, pulseaudio
 }:
 
 stdenv.mkDerivation rec {
   name = "studio-link-${version}";
-  version = "17.03.1-beta";
+  version = "20.01.0";
+
   src = fetchurl {
-    url = "https://github.com/Studio-Link-v2/backend/releases/download/v${version}/studio-link-standalone-linux.zip";
-    sha256 = "1y21nymin7iy64hcffc8g37fv305b1nvmh944hkf7ipb06kcx6r9";
+    url = "https://download.studio.link/releases/v${version}-beta/linux/studio-link-standalone-v${version}.tar.gz";
+    sha256 = "0mjbyb13ik5cy20pjk8vsx70ayf8fvbl2sk0air9jdv0qvdsdb9z";
   };
+  unpackPhase = ''
+    mkdir -p $out/bin
+    tar -C $out/bin -xf $src
+    mv $out/bin/studio-link-standalone-v${version} $out/bin/studio-link
+  '';
   nativeBuildInputs = [ unzip autoPatchelfHook ];
   buildInputs = [
-      alsaLib
-
-      openssl_1_0_2
-      zlib
-      libjack2
+    alsaLib
+    pulseaudio
+    zlib
+    stdenv.cc.cc
   ];
 
-  unpackPhase = ''
-    unzip $src
-  '';
-
-  installPhase = ''
-    mkdir -p $out/bin
-    cp studio-link-standalone $out/bin/studio-link
-    chmod +x $out/bin/studio-link
-  '';
+  installPhase = ":";
 
   meta = with stdenv.lib; {
     homepage = https://studio-link.com;

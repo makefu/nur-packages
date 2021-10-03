@@ -79,7 +79,7 @@ GEM
       mojo_magick
       rqrcode
     racc (1.5.2)
-    rack (2.0.5)
+    rack (2.1.4)
     rack-protection (2.0.3)
       rack
     rainbow (3.0.0)
@@ -166,7 +166,7 @@ DEPENDENCIES
   nokogiri (>= 1.7)
   parseconfig
   qr4r
-  rack (~> 2.0)
+  rack (~> 2.1)
   rack-protection (~> 2.0)
   rake
   rubydns (~> 0.7.3)

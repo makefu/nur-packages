@@ -6,7 +6,7 @@ GEM
     ansi (1.5.0)
     buftok (0.2.0)
     chunky_png (1.3.10)
-    daemons (1.2.6)
+    daemons (1.4.1)
     data_objects (0.10.17)
       addressable (~> 2.1)
     dm-core (1.2.1)
@@ -67,7 +67,8 @@ GEM
     msgpack (1.2.4)
     multi_json (1.13.1)
     multipart-post (2.0.0)
-    mustermann (1.0.2)
+    mustermann (3.0.0)
+      ruby2_keywords (~> 0.0.1)
     naught (1.1.0)
     netrc (0.11.0)
     nokogiri (1.12.5)
@@ -79,8 +80,8 @@ GEM
       mojo_magick
       rqrcode
     racc (1.5.2)
-    rack (2.0.5)
-    rack-protection (2.0.3)
+    rack (2.2.4)
+    rack-protection (3.0.4)
       rack
     rainbow (3.0.0)
     rake (12.3.3)
@@ -103,6 +104,7 @@ GEM
     robots (0.10.1)
     rqrcode (0.10.1)
       chunky_png (~> 1.0)
+    ruby2_keywords (0.0.5)
     rubydns (0.7.3)
       eventmachine (~> 1.0.0)
       rexec (~> 1.6.2)
@@ -111,20 +113,20 @@ GEM
       json
       rest-client
     simple_oauth (0.3.1)
-    sinatra (2.0.3)
-      mustermann (~> 1.0)
-      rack (~> 2.0)
-      rack-protection (= 2.0.3)
+    sinatra (3.0.4)
+      mustermann (~> 3.0)
+      rack (~> 2.2, >= 2.2.4)
+      rack-protection (= 3.0.4)
       tilt (~> 2.0)
     slack-notifier (2.3.2)
     term-ansicolor (1.6.0)
       tins (~> 1.0)
-    thin (1.7.2)
+    thin (1.8.1)
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0, >= 1.0.4)
       rack (>= 1, < 3)
     thread_safe (0.3.6)
-    tilt (2.0.8)
+    tilt (2.0.11)
     tins (1.16.3)
     twitter (6.2.0)
       addressable (~> 2.3)
@@ -166,13 +168,13 @@ DEPENDENCIES
   nokogiri (>= 1.7)
   parseconfig
   qr4r
-  rack (~> 2.0)
-  rack-protection (~> 2.0)
+  rack (~> 2.2)
+  rack-protection (~> 3.0)
   rake
   rubydns (~> 0.7.3)
   rubyzip (>= 1.2.1)
   rushover
-  sinatra (~> 2.0)
+  sinatra (~> 3.0)
   slack-notifier
   term-ansicolor
   thin
